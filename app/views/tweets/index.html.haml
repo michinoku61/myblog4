@@ -1,8 +1,15 @@
 = render "module/header"
 .contents
-  .contents__box
-    .contents__box__center
-      %p.date 日付
-      .nameplate
-      .text__area テストテスト
-      .text__end 続きよをむ
+  - @tweets.each do |tweet|
+    .contents__box
+      .contents__box__center
+        - if tweet.image.attached?
+          .image_box
+            = image_tag tweet.image, size: "350x262"
+          %p.date
+            = tweet.created_at
+          .nameplate
+            = tweet.name
+          .text__area
+            = tweet.text
+          .text__end 続きよをむ
