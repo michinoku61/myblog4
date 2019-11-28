@@ -1,0 +1,35 @@
+.contents{
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+}
+.contents__box{
+  width: 800px;
+  padding: 0.5em 1em;
+　margin: 2em 0;
+  margin: 0 auto;
+  border: double 5px #4ec4d3;
+  padding-top: 30px;
+  &__center{
+    padding: 0 0 0 20px;
+    .image__box{
+      text-align: center;
+    }
+    .nameplate{
+      width: 100%;
+      height: 30px;
+      text-align: center;
+    }
+    .text__area{
+      text-align: center;
+    }
+    .text__end{
+      text-align: right;
+    }
+  }
+}
+
+
+.contents__space{
+  height: 20px;
+}
