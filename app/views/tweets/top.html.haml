@@ -1,14 +1,4 @@
-%nav.white{:role => "navigation"}
-  .nav-wrapper.container
-    %a#logo-container.brand-logo{:href => "#"} Logo
-    %ul.right.hide-on-med-and-down
-      %li
-        %a{:href => "#"} Navbar Link
-    %ul#nav-mobile.sidenav
-      %li
-        %a{:href => "#"} Navbar Link
-    %a.sidenav-trigger{"data-target" => "nav-mobile", :href => "#"}
-      %i.material-icons menu
+= render "module/header"
 #index-banner.parallax-container
   .section.no-pad-bot
     .container
@@ -18,7 +8,7 @@
       .row.center
         %h5.header.col.s12.light A modern responsive front-end framework based on Material Design
       .row.center
-        %a#download-button.btn-large.waves-effect.waves-light.teal.lighten-1{:href => "http://materializecss.com/getting-started.html"} Get Started
+        = link_to 'Get Started', tweets_path, class: "#download-button btn-large waves-effect waves-light teal lighten-1"
       %br/
       %br/
   .parallax

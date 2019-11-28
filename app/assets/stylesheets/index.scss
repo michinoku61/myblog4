@@ -1,0 +1,27 @@
+.contents{
+  height: 100%;
+  width: 100%;
+}
+.contents__box{
+  width: 900px;
+  padding: 0.5em 1em;
+　margin: 2em 0;
+  margin: 0 auto;
+  border: double 5px #4ec4d3;
+  &__center{
+    padding: 20px 0 0 20px;
+    .nameplate{
+      width: 100%;
+      height: 30px;
+      background: #4ec4d3;
+    }
+    .text__area{
+      text-align: center;
+    }
+    .text__end{
+      text-align: right;
+    }
+  }
+}
+
+
