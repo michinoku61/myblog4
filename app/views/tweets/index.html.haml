@@ -4,12 +4,13 @@
     .contents__box
       .contents__box__center
         - if tweet.image.attached?
-          .image_box
-            = image_tag tweet.image, size: "350x262"
           %p.date
             = tweet.created_at
-          .nameplate
+          .image__box
+            = image_tag tweet.image, size: "200x150"
+          %h4.nameplate
             = tweet.name
-          .text__area
+          %p.text__area
             = tweet.text
-          .text__end 続きよをむ
+          .text__end 続きを読む>
+    .contents__space
