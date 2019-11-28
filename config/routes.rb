@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'tweets#top'
-  resources :tweets, only: [:index] 
+  resources :tweets, only: [:index, :new, :create] 
 end
