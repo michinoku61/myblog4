@@ -1,12 +1,24 @@
-.contentes_row
-  = form_with(model: @tweet, url: tweets_path, local: true) do |f|
-    %h3 投稿
-    .name_box
-      = f.text_field :name, placeholder: 'タイトル'
-    .image_box
-      = f.file_field :image
-    .text_box
-      = f.text_area :text ,placeholder: 'text'
-    .submit_button
-      = f.submit '送信する' do
-        送信する
+= render "module/header"
+.contents
+  .contents__box
+    .contents__box__center
+      - if @tweet.image.attached?
+        .user_name_image_box
+          .user_image
+            = image_tag @tweet.user.image, size:"35x35", class:"image_css"
+          .user_name
+            %span
+              = @tweet.user.name
+        .contentes_row
+          = form_with(local: true) do |f|
+            %h3 投稿
+            .name_box
+              = f.text_field :name, placeholder: 'タイトル'
+            .image_box
+              = f.file_field :image
+            .text_box
+              = f.text_area :text ,placeholder: 'text', class: "text_box_area"
+            .submit_button
+              = f.submit '送信する' do
+                送信する
+

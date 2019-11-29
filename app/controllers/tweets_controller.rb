@@ -11,6 +11,7 @@ class TweetsController < ApplicationController
 
   def new
     redirect_to action: :index unless user_signed_in?
+    @tweet = Tweet.find(current_user.id)
   end
 
   def show
