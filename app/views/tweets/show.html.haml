@@ -18,4 +18,7 @@
         = @tweet.name
       %p.text__area
         = simple_format(@tweet.text)
+      - if user_signed_in? && current_user.id == @tweet.user_id
+        .text__end
+          = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
 
