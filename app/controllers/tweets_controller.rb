@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("id DESC")
+    @image = Tweet.includes(:user).find(current_user.id)
 
     # @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("id DESC")
   end
@@ -15,6 +16,7 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.includes(:user).find(params[:id])
+    @image = Tweet.includes(:user).find(current_user.id)
   end
 
   def create
