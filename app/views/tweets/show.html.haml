@@ -3,11 +3,17 @@
   .contents__box
     .contents__box__center
       - if @tweet.image.attached?
+        .user_name_image_box
+          .user_image
+            = image_tag @tweet.user.image, size:"35x35", class:"image_css"
+          .user_name
+            %span
+              = @tweet.user.name
         %p.date
-          = @tweet.created_at
+          = simple_time(@tweet.created_at)
         .image__box
           = image_tag @tweet.image, size: "350x262"
         %h4.nameplate
           = @tweet.name
-        %p.text__area_1
+        %p.text__area
           = @tweet.text

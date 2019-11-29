@@ -6,14 +6,28 @@
 .contents__box{
   width: 800px;
   padding: 0.5em 1em;
-　margin: 2em 0;
   margin: 0 auto;
   border: double 5px #4ec4d3;
   padding-top: 30px;
   &__center{
     padding: 0 0 0 20px;
+    .user_name_image_box{
+      display: flex;
+    }
+    .image_css {
+      border-radius: 100px;
+      object-fit: cover;
+    }
     .image__box{
       text-align: center;
+    }
+    .user_name{
+      height: 20px;
+      padding-left: 10px;
+      & span{
+        vertical-align:-18%;
+        font-size: 22px;
+      }
     }
     .nameplate{
       width: 100%;
