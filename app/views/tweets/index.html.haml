@@ -22,3 +22,5 @@
         .text__end
           = link_to '続きを読む>', "/tweets/#{tweet.id}"
     .contents__space
+  .paginate_box
+    = paginate(@tweets)
