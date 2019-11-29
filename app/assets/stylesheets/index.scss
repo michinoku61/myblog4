@@ -22,14 +22,16 @@
     }
     .text__area{
       text-align: center;
+      height: 20px;
+     & p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
     .text__end{
       text-align: right;
-    }
-    p {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
+      margin-top: 10px;
     }
   }
 }

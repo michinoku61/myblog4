@@ -4,14 +4,17 @@
     .contents__box
       .contents__box__center
         - if tweet.image.attached?
+          %p.user_name
+            = tweet.user.name
           %p.date
             = tweet.created_at
           .image__box
             = image_tag tweet.image, size: "200x150"
           %h4.nameplate
             = tweet.name
-          %p.text__area
-            = tweet.text
+          .text__area
+            %p
+              = tweet.text
           .text__end
             = link_to '続きを読む>', "/tweets/#{tweet.id}"
     .contents__space

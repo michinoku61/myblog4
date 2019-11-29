@@ -10,6 +10,9 @@
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .field
+    %br/
+    = f.file_field :image, autofocus: true, autocomplete: "image"
+  .field
     = f.label :password
     - if @minimum_password_length
       %em
