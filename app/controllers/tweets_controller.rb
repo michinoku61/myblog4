@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :login_check, except: [:index, :show, :top]
+  before_action :login_check, except: [S:top]
   def top
   end
 
