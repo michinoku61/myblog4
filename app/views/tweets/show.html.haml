@@ -1,0 +1,13 @@
+= render "module/header"
+.contents
+  .contents__box
+    .contents__box__center
+      - if @tweet.image.attached?
+        %p.date
+          = @tweet.created_at
+        .image__box
+          = image_tag @tweet.image, size: "350x262"
+        %h4.nameplate
+          = @tweet.name
+        %p.text__area
+          = @tweet.text
