@@ -1,0 +1,24 @@
+= render "module/header"
+.contents
+  .contents__box
+    .contents__box__center
+      - if @image.image.attached?
+        .user_name_image_box
+          .user_image
+            = image_tag @image.user.image, size:"35x35", class:"image_css"
+          .user_name
+            %span
+              = @tweet.user.name
+      %p.date
+        = simple_time(@tweet.created_at)
+      .image__box
+        - if @tweet.image.attached?
+          = image_tag @tweet.image, size: "350x262"
+      %h4.nameplate
+        = @tweet.name
+      %p.text__area
+        = simple_format(@tweet.text)
+      - if user_signed_in? && current_user.id == @tweet.user_id
+        .text__end
+          = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
+

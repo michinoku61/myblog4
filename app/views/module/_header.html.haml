@@ -1,14 +1,19 @@
 %nav.white{:role => "navigation"}
   .nav-wrapper.container
-    %a#logo-container.brand-logo{:href => "#"} Logo
-    %ul.right.hide-on-med-and-down
-      %li
-        = link_to '投稿する', new_tweet_path
-    %ul.right.hide-on-med-and-down
-      %li
-        %a{:href => "#"} Navbar Link
-    %ul#nav-mobile.sidenav
-      %li
-        %a{:href => "#"} Navbar Link
-    %a.sidenav-trigger{"data-target" => "nav-mobile", :href => "#"}
-      %i.material-icons menu
+    = link_to "MyBlog4", tweets_path, class:"#logo-container brand-logo"
+    - if user_signed_in?
+      %ul.right.hide-on-med-and-down
+        %li
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        %li
+          = link_to '投稿する', new_tweet_path
+        %li
+          = link_to 'トップページ', root_path
+    - else
+      %ul.right.hide-on-med-and-down
+        %li
+          = link_to '新規登録', new_user_registration_path
+        %li
+          = link_to 'ログイン', new_user_session_path
+        %li
+          = link_to 'トップページ', root_path
