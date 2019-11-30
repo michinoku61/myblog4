@@ -13,6 +13,7 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.includes(:user).find(params[:id])
+    @like = Like.new
   end
 
   def create

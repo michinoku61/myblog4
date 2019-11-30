@@ -24,3 +24,19 @@
     .contents__space
   .paginate_box
     = paginate(@tweets)
+
+-# %h1 いいねサンプル
+-# - if user_signed_in?
+-#   = link_to "ログアウト", destroy_user_session_path, :method => :delete
+-#   = link_to "マイページへ", user_path(current_user.id)
+-#   = link_to "ユーザー一覧へ", users_path
+-#   %hr/
+-#   %h2 投稿一覧
+-#   - @tweets.each do |tweet|
+-#     %a{:href => "/users/#{tweet.user.id}"}= tweet.user.email
+-#     %a{:href => "/tweets/#{tweet.id}"}= tweet.name
+-#     (#{tweet.liked_users.count})
+-# - else
+-#   = link_to "ユーザー登録", new_user_registration_path
+-#   = link_to "ログイン", new_user_session_path
+

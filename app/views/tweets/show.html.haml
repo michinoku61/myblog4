@@ -18,7 +18,32 @@
         = @tweet.name
       %p.text__area
         = simple_format(@tweet.text)
-      - if user_signed_in? && current_user.id == @tweet.user_id
-        .text__end
-          = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
+      .like_count_box_flex
+        .like_count_box
+          .like_count
+            いいね件数: #{@tweet.likes.count}
+          .like_box
+            - if current_user.already_liked?(@tweet)
+              = button_to 'いいねを取り消す', tweet_like_path(@tweet), method: :delete
+            - else
+              = button_to 'いいね', tweet_likes_path(@tweet)
+        - if user_signed_in? && current_user.id == @tweet.user_id
+          .text__end
+            = link_to '削除', "/tweets/#{@tweet.id}", method: :delete
+
+-# %h1 投稿詳細ページ
+-# %h3= @tweet.user.email
+-# %h3= @tweet.name
+-# .like_count
+-#   いいね件数: #{@tweet.likes.count}
+-# .like_box
+-#   - if current_user.already_liked?(@tweet)
+-#     = button_to 'いいねを取り消す', tweet_like_path(@tweet), method: :delete
+-#   - else
+-#     = button_to 'いいね', tweet_likes_path(@tweet)
+-# %h2 いいねしたユーザー
+-# - @tweet.liked_users.each do |user|
+-#   %li= user.email
+-# = link_to "ホームへ戻る", tweets_path
+
 
