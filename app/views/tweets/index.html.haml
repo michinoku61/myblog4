@@ -3,22 +3,22 @@
   - @tweets.each do |tweet|
     .contents__box
       .contents__box__center
-        - if @image.image.attached?
+        - if tweet.image.attached?
           .user_name_image_box
             .user_image
-              = image_tag @image.user.image, size:"35x35", class:"image_css"
+              = image_tag tweet.user.image, size:"35x35", class:"image_css"
             .user_name
               %span
-                = tweet.user.name
+                = link_to tweet.user.name, "/users/#{tweet.user.id}"
         %p.date
           = simple_time(tweet.created_at)
         .image__box
-          - if tweet.image.attached?
-            = image_tag tweet.image, size: "200x150"
+          = image_tag tweet.image, size: "200x150"
         %h4.nameplate
           = tweet.name
         .text__area
-          = simple_format(tweet.text)
+          %p
+            = simple_format(tweet.text)
         .text__end
           = link_to '続きを読む>', "/tweets/#{tweet.id}"
     .contents__space

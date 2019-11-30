@@ -1,0 +1,6 @@
+= render "module/header"
+%h1 ユーザー一覧
+- @users.each do |user|
+  = link_to user.name, "/users/#{user.id}"
+  %hr/
+= link_to "ホームへ戻る", tweets_path
