@@ -36,14 +36,18 @@
     }
     .text__area{
       text-align: left;
-      height: 20px;
-     & p {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
+      width: 500px;
+      margin: auto;
+      overflow: hidden;
+      height: 3.6em; /* 2em（行）x line-heightの1.8 */
+      line-height: 1.8;
+      
+      & p {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
       }
     }
     .text__end{

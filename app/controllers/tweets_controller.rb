@@ -1,11 +1,10 @@
 class TweetsController < ApplicationController
-  before_action :login_check, except: [:top]
+  before_action :login_check, except: [:top, :index, :show]
   def top
   end
 
   def index
     @tweets = Tweet.includes(:user).page(params[:page]).per(5).order("id DESC")
-    @image = Tweet.includes(:user).find(current_user.id)
   end
 
   def new
@@ -14,7 +13,6 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.includes(:user).find(params[:id])
-    @image = Tweet.includes(:user).find(current_user.id)
   end
 
   def create

@@ -2,10 +2,10 @@
 .contents
   .contents__box
     .contents__box__center
-      - if @image.image.attached?
+      - if @tweet.image.attached?
         .user_name_image_box
           .user_image
-            = image_tag @image.user.image, size:"35x35", class:"image_css"
+            = image_tag @tweet.user.image, size:"35x35", class:"image_css"
           .user_name
             %span
               = @tweet.user.name

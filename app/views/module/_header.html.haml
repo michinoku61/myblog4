@@ -8,6 +8,8 @@
         %li
           = link_to '投稿する', new_tweet_path
         %li
+          = link_to 'マイページ', user_path(current_user.id)
+        %li
           = link_to 'トップページ', root_path
     - else
       %ul.right.hide-on-med-and-down
