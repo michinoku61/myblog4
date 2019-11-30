@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :login_check, except: [:top, :index, :show]
+  before_action :login_check, except: [:top, :index]
   def top
   end
 
@@ -13,6 +13,7 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.includes(:user).find(params[:id])
+    @like = Like.new
   end
 
   def create
