@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   end
   private
   def current_user_name
-    @current = User.find(current_user.id)
+    if User.ids != nil && user_signed_in?
+      @current = User.find(current_user.id)
+    end
   end
 end
