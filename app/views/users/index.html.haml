@@ -1,6 +1,15 @@
 = render "module/header"
-%h1 ユーザー一覧
-- @users.each do |user|
-  = link_to user.name, "/users/#{user.id}"
-  %hr/
-= link_to "ホームへ戻る", tweets_path
+.contents
+  .contents__box
+    .contents__box__center
+      %h1 ユーザー一覧
+      - @users.each do |user|
+        - if user.image.attached?
+          .user_name_image_box
+            .user_image
+              = image_tag user.image, size:"35x35", class:"image_css"
+            .user_name
+              %span
+                = link_to user.name, "/users/#{user.id}"
+        %hr/
+      = link_to "ホームへ戻る", tweets_path
