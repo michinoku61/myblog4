@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :login_check, except: [:top, :index]
+  before_action :current_user_name
   def top
   end
 
@@ -36,5 +37,9 @@ class TweetsController < ApplicationController
 
   def login_check
     redirect_to "/users/sign_in" unless user_signed_in?
+  end
+  
+  def current_user_name
+    @current = User.find(current_user.id)
   end
 end

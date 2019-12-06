@@ -4,6 +4,8 @@
     - if user_signed_in?
       %ul.right.hide-on-med-and-down
         %li
+          = link_to @current.name, user_path(current_user.id)
+        %li
           = link_to 'ログアウト', destroy_user_session_path, method: :delete
         %li
           = link_to '投稿する', new_tweet_path
